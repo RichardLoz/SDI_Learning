@@ -126,7 +126,7 @@
 
                         <div id="module1Collapse" class="collapse show" role="tabpanel" aria-labelledby="module1Heading">
                             <div class="card-body">
-                                <iframe src="/data/Capítulo 2-0  Alcance, Definiciones, y Referencias.pdf" width="100%" height="600px"></iframe>
+                                <iframe src="/data/asme_b30_2_2005/Capítulo 2-0  Alcance, Definiciones, y Referencias.pdf" width="100%" height="600px"></iframe>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal">
                                     Realizar Test
                                 </button> -->
@@ -145,7 +145,7 @@
                         </div>
                         <div id="module2Collapse" class="collapse" role="tabpanel" aria-labelledby="module2Heading">
                             <div class="card-body">
-                                <iframe src="/data/Capítulo 2-1  Construcción e Instalación  (PRIMERA PARTE)_.pdf" width="100%" height="600px"></iframe>
+                                <iframe src="/data/asme_b30_2_2005/Capítulo 2-1  Construcción e Instalación  (PRIMERA PARTE)_.pdf" width="100%" height="600px"></iframe>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal2">
                                     Realizar Test
                                 </button>
@@ -164,7 +164,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" data-modulo="modulo2">
                                  <p>Pregunta 1: ¿Dónde debe ser marcada la carga nominal en una grúa?</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1a" value="option1">
@@ -192,7 +192,7 @@
                                 </div>   
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body" data-modulo="modulo2">
                                 <p>Pregunta 2: ¿Cuáles son las advertencias que deben incluir las etiquetas de seguridad en grúas operadas a control remoto?</p>
                                <div class="form-check">
                                    <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2a" value="option1">
@@ -220,7 +220,7 @@
                                </div>
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body" data-modulo="modulo2">
                                 <p>Pregunta 3: ¿Dónde deben estar ubicados los dispositivos de control usados por el operador para indicar cuál polipasto opera?</p>
                                <div class="form-check">
                                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3a" value="option1">
@@ -248,7 +248,7 @@
                                </div>
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body" data-modulo="modulo2">
                                 <p>Pregunta 4: ¿Cuál es la altura mínima del espacio libre de la cabina sobre el pasillo o piso de trabajo?</p>
                                <div class="form-check">
                                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4a" value="option1">
@@ -276,7 +276,7 @@
                                </div>
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body" data-modulo="modulo2">
                                 <p>Pregunta 5: ¿Qué norma debe cumplirse en cuanto a las barandas de seguridad en las plataformas de servicio?</p>
                                <div class="form-check">
                                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5a" value="option1">
@@ -306,14 +306,14 @@
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Enviar respuestas</button>
+                                <button type="button" class="btn btn-primary" id="enviarRespuestasBtn" disabled>Enviar respuestas</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                     <!-- Module 3 -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header" role="tab" id="module3Heading">
                             <h5 class="mb-0">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module3Collapse" aria-expanded="faaria-controls="module3Collapse">Módulo 3: Construcción e Instalación  (SEGUNDA PARTE)</a>
@@ -321,17 +321,17 @@
                         </div>
                         <div id="module3Collapse" class="collapse" role="tabpanel" aria-labelledby="module2Heading">
                             <div class="card-body">
-                                <iframe src="/data/Capítulo 2-1  Construcción e Instalación  (SEGUNDA PARTE)_.pdf" width="100%" height="600px"></iframe>
+                                <iframe src="/data/asme_b30_2_2005/Capítulo 2-1  Construcción e Instalación  (SEGUNDA PARTE)_.pdf" width="100%" height="600px"></iframe>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal3">
                                     Realizar Test
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- PREGUNTAS DEL MODULO 3 -->
 
-                    <div class="modal fade" id="testModal3" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
+                    <!-- <div class="modal fade" id="testModal3" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -341,155 +341,284 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                     <p>Pregunta 1: ¿Dónde debe ser marcada la carga nominal en una grúa?</p>
+                                     <p>Pregunta 1: ¿Qué debe hacerse con los barridos de rieles del carro de traslación del puente?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1a" value="option1">
                                         <label class="form-check-label" for="respuesta1a">
-                                            En el bloque de carga
+                                            Colocarlos detrás de las ruedas conductoras.
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1b" value="option2">
                                         <label class="form-check-label" for="respuesta1b">
-                                            En la cabina
+                                            Extenderlos por encima de la cabeza del riel.
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1c" value="option3">
                                         <label class="form-check-label" for="respuesta1c">
-                                            En la estructura de soporte
+                                            Eliminarlos por completo.
                                         </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1d" value="option4">
-                                        <label class="form-check-label" for="respuesta1d">
-                                            En la plataforma exterior
-                                        </label>
-                                    </div>   
+                                    </div> 
                                 </div>
     
                                 <div class="modal-body">
-                                    <p>Pregunta 2: ¿Cuáles son las advertencias que deben incluir las etiquetas de seguridad en grúas operadas a control remoto?</p>
+                                    <p>Pregunta 2: ¿Cuál es el propósito principal de los barridos de rieles?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2a" value="option1">
                                        <label class="form-check-label" for="respuesta2a">
-                                        Levantar cargas mayores de la carga nominal
+                                        Impedir el movimiento del carro.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2b" value="option2">
                                        <label class="form-check-label" for="respuesta2b">
-                                        Operar la grúa con el viento
+                                        Mantener los rieles limpios.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2c" value="option3">
                                        <label class="form-check-label" for="respuesta2c">
-                                        Operar la grúa con el cable en buen estado
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2d" value="option4">
-                                       <label class="form-check-label" for="respuesta2d">
-                                        Operar movimientos manuales sin otra energía
+                                        Incrementar la velocidad de la grúa.
                                        </label>
                                    </div>
                                 </div>
     
                                 <div class="modal-body">
-                                    <p>Pregunta 3: ¿Dónde deben estar ubicados los dispositivos de control usados por el operador para indicar cuál polipasto opera?</p>
+                                    <p>Pregunta 3: ¿Cuál es el espacio libre máximo permitido entre la superficie de la cabeza del riel y la parte inferior del barrido?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3a" value="option1">
                                        <label class="form-check-label" for="respuesta3a">
-                                        En la cabina
+                                        1/2 pulgadas.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3b" value="option2">
                                        <label class="form-check-label" for="respuesta3b">
-                                        En la estructura de soporte
+                                        3/8 pulgadas.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3c" value="option3">
                                        <label class="form-check-label" for="respuesta3c">
-                                        En el bloque de carga
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3d" value="option4">
-                                       <label class="form-check-label" for="respuesta3d">
-                                        En la plataforma de servicio
+                                        3/16 pulgadas.
                                        </label>
                                    </div>
                                 </div>
     
                                 <div class="modal-body">
-                                    <p>Pregunta 4: ¿Cuál es la altura mínima del espacio libre de la cabina sobre el pasillo o piso de trabajo?</p>
+                                    <p>Pregunta 4: ¿En qué tipo de grúas deben extenderse los barridos por debajo de la superficie de la cabeza del riel?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4a" value="option1">
                                        <label class="form-check-label" for="respuesta4a">
-                                        5 pies (1.52 metros)
+                                        Grúas pórtico.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4b" value="option2">
                                        <label class="form-check-label" for="respuesta4b">
-                                        7 pies (2.1 metros)
+                                        Grúas elevadas.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4c" value="option3">
                                        <label class="form-check-label" for="respuesta4c">
-                                        10 pies (3.05 metros)
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4d" value="option4">
-                                       <label class="form-check-label" for="respuesta4d">
-                                        12 pies (3.66 metros)
+                                        Grúas de horca fija.
                                        </label>
                                    </div>
                                 </div>
     
                                 <div class="modal-body">
-                                    <p>Pregunta 5: ¿Qué norma debe cumplirse en cuanto a las barandas de seguridad en las plataformas de servicio?</p>
+                                    <p>Pregunta 5: ¿Cuál es el requisito para el espacio libre entre las superficies verticales interiores del barrido?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5a" value="option1">
                                        <label class="form-check-label" for="respuesta5a">
-                                        ANSI A14.3
+                                        Igual al ancho de la banda de rodamiento de las ruedas.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5b" value="option2">
                                        <label class="form-check-label" for="respuesta5b">
-                                        ANSI A1264.1
+                                        1/4 pulgadas.
                                        </label>
                                    </div>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5c" value="option3">
                                        <label class="form-check-label" for="respuesta5c">
-                                        ANSI Z535.4
+                                        3/8 pulgadas.
+                                       </label>
+                                   </div>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>Pregunta 6: ¿Dónde deben ubicarse los barridos de rieles en el carro de traslación?</p>
+                                   <div class="form-check">
+                                       <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6a" value="option1">
+                                       <label class="form-check-label" for="respuesta6a">
+                                        En la parte trasera de las ruedas conductoras.
                                        </label>
                                    </div>
                                    <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5d" value="option4">
-                                       <label class="form-check-label" for="respuesta5d">
-                                        ANSI/SAE Z26.1
+                                       <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6b" value="option2">
+                                       <label class="form-check-label" for="respuesta6b">
+                                        En la parte delantera de las ruedas conductoras.
+                                       </label>
+                                   </div>
+                                   <div class="form-check">
+                                       <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6c" value="option3">
+                                       <label class="form-check-label" for="respuesta6c">
+                                        En la parte superior de las ruedas conductoras.
                                        </label>
                                    </div>
                                 </div>
-    
-                                <div class="modal-footer">
+
+                                <!-- Modal Pregunta 7 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 7: ¿Cuál es el propósito principal de los dispositivos de protección para partes en movimiento?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7a" value="option1">
+                                        <label class="form-check-label" for="respuesta7a">
+                                            Evitar que las grúas funcionen.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7b" value="option2">
+                                        <label class="form-check-label" for="respuesta7b">
+                                            Proteger a las personas de piezas en movimiento.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7c" value="option3">
+                                        <label class="form-check-label" for="respuesta7c">
+                                            Aumentar la velocidad de la grúa.
+                                        </label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 8 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 8: ¿Cuál es el requisito para la capacidad de carga de los protectores de partes en movimiento?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8a" value="option1">
+                                        <label class="form-check-label" for="respuesta8a">
+                                            Deben soportar el peso de una persona de 100 libras.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8b" value="option2">
+                                        <label class="form-check-label" for="respuesta8b">
+                                            Deben soportar el peso de una persona de 200 libras.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8c" value="option3">
+                                        <label class="form-check-label" for="respuesta8c">
+                                            Deben soportar el peso de una persona de 300 libras.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                Modal Pregunta 9
+                                <div class="modal-body">
+                                    <p>Pregunta 9: ¿Cuál es la distancia máxima permitida para la caída de armazones de carros y puentes en caso de fallo?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9a" value="option1">
+                                        <label class="form-check-label" for="respuesta9a">
+                                            10 pulgadas.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9b" value="option2">
+                                        <label class="form-check-label" for="respuesta9b">
+                                            25 mm.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9c" value="option3">
+                                        <label class="form-check-label" for="respuesta9c">
+                                            1 pulgada.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Modal Pregunta 10 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 10: ¿Cuál es el requisito mínimo para la torsión del freno de contención en polipastos?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10a" value="option1">
+                                        <label class="form-check-label" for="respuesta10a">
+                                            El 100% de la torsión de elevación de la carga nominal.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10b" value="option2">
+                                        <label class="form-check-label" for="respuesta10b">
+                                            El 50% de la torsión de elevación de la carga nominal.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10c" value="option3">
+                                        <label class="form-check-label" for="respuesta10c">
+                                            El 125% de la torsión de elevación de la carga nominal.
+                                        </label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 11 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 11: ¿Cuál es el propósito de los dispositivos de frenado de control del polipasto?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11a" value="option1">
+                                        <label class="form-check-label" for="respuesta11a">
+                                            Detener el movimiento de la grúa.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11b" value="option2">
+                                        <label class="form-check-label" for="respuesta11b">
+                                            Controlar la carga durante el descenso.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11c" value="option3">
+                                        <label class="form-check-label" for="respuesta11c">
+                                            Acelerar el movimiento de la carga.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Modal Pregunta 12 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 12: ¿En qué dirección debe dirigirse la palanca de operación del interruptor maestro o dispositivo de control manual?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12a" value="option1">
+                                        <label class="form-check-label" for="respuesta12a">
+                                            En la dirección opuesta al movimiento de la carga.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12b" value="option2">
+                                        <label class="form-check-label" for="respuesta12b">
+                                            En la misma dirección general que el movimiento resultante de la carga.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12c" value="option3">
+                                        <label class="form-check-label" for="respuesta12c">
+                                            En cualquier dirección.
+                                        </label>
+                                    </div>
+                                </div>           -->
+                                <!-- <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                     <button type="button" class="btn btn-primary">Enviar respuestas</button>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </div> -->
+                        <!-- </div> -->
+                    <!-- </div> --> --> --> -->
 
                                                             <!-- Module 4 -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header" role="tab" id="module4Heading">
                             <h5 class="mb-0">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module4Collapse" aria-expanded="false" aria-controls="module4Collapse">Módulo 4: Inspección, Pruebas y Mantenimiento</a>
@@ -497,18 +626,18 @@
                         </div>
                         <div id="module4Collapse" class="collapse" role="tabpanel" aria-labelledby="module4Heading">
                             <div class="card-body">
-                                <iframe src="/data/Capítulo 2-2  Inspección, Pruebas y Mantenimiento.pdf" width="100%" height="600px"></iframe>
+                                <iframe src="/data/asme_b30_2_2005/Capítulo 2-2  Inspección, Pruebas y Mantenimiento.pdf" width="100%" height="600px"></iframe>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal4">
                                     Realizar Test
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <!-- PREGUNTAS DEL MODULO 4 -->
 
-                    <div class="modal fade" id="testModal4" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
+                    <!-- <div class="modal fade" id="testModal4" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -517,156 +646,276 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
-                                     <p>Pregunta 1: ¿Dónde debe ser marcada la carga nominal en una grúa?</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1a" value="option1">
-                                        <label class="form-check-label" for="respuesta1a">
-                                            En el bloque de carga
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1b" value="option2">
-                                        <label class="form-check-label" for="respuesta1b">
-                                            En la cabina
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1c" value="option3">
-                                        <label class="form-check-label" for="respuesta1c">
-                                            En la estructura de soporte
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1d" value="option4">
-                                        <label class="form-check-label" for="respuesta1d">
-                                            En la plataforma exterior
-                                        </label>
-                                    </div>   
+                                <!-- Modal Pregunta 1 -->
+                            <!-- Modal Pregunta 1 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 1: ¿Qué tipo de inspección se requiere para grúas nuevas, reinstaladas, alteradas, reparadas y modificadas antes de su uso inicial?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1a" value="option1">
+                                    <label class="form-check-label" for="respuesta1a">Inspección diaria</label>
                                 </div>
-    
-                                <div class="modal-body">
-                                    <p>Pregunta 2: ¿Cuáles son las advertencias que deben incluir las etiquetas de seguridad en grúas operadas a control remoto?</p>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2a" value="option1">
-                                       <label class="form-check-label" for="respuesta2a">
-                                        Levantar cargas mayores de la carga nominal
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2b" value="option2">
-                                       <label class="form-check-label" for="respuesta2b">
-                                        Operar la grúa con el viento
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2c" value="option3">
-                                       <label class="form-check-label" for="respuesta2c">
-                                        Operar la grúa con el cable en buen estado
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2d" value="option4">
-                                       <label class="form-check-label" for="respuesta2d">
-                                        Operar movimientos manuales sin otra energía
-                                       </label>
-                                   </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1b" value="option2">
+                                    <label class="form-check-label" for="respuesta1b">Inspección anual</label>
                                 </div>
-    
-                                <div class="modal-body">
-                                    <p>Pregunta 3: ¿Dónde deben estar ubicados los dispositivos de control usados por el operador para indicar cuál polipasto opera?</p>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3a" value="option1">
-                                       <label class="form-check-label" for="respuesta3a">
-                                        En la cabina
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3b" value="option2">
-                                       <label class="form-check-label" for="respuesta3b">
-                                        En la estructura de soporte
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3c" value="option3">
-                                       <label class="form-check-label" for="respuesta3c">
-                                        En el bloque de carga
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3d" value="option4">
-                                       <label class="form-check-label" for="respuesta3d">
-                                        En la plataforma de servicio
-                                       </label>
-                                   </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1c" value="option3">
+                                    <label class="form-check-label" for="respuesta1c">Inspección frecuente</label>
                                 </div>
-    
-                                <div class="modal-body">
-                                    <p>Pregunta 4: ¿Cuál es la altura mínima del espacio libre de la cabina sobre el pasillo o piso de trabajo?</p>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4a" value="option1">
-                                       <label class="form-check-label" for="respuesta4a">
-                                        5 pies (1.52 metros)
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4b" value="option2">
-                                       <label class="form-check-label" for="respuesta4b">
-                                        7 pies (2.1 metros)
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4c" value="option3">
-                                       <label class="form-check-label" for="respuesta4c">
-                                        10 pies (3.05 metros)
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4d" value="option4">
-                                       <label class="form-check-label" for="respuesta4d">
-                                        12 pies (3.66 metros)
-                                       </label>
-                                   </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1d" value="option4">
+                                    <label class="form-check-label" for="respuesta1d">Inspección periódica</label>
                                 </div>
-    
-                                <div class="modal-body">
-                                    <p>Pregunta 5: ¿Qué norma debe cumplirse en cuanto a las barandas de seguridad en las plataformas de servicio?</p>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5a" value="option1">
-                                       <label class="form-check-label" for="respuesta5a">
-                                        ANSI A14.3
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5b" value="option2">
-                                       <label class="form-check-label" for="respuesta5b">
-                                        ANSI A1264.1
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5c" value="option3">
-                                       <label class="form-check-label" for="respuesta5c">
-                                        ANSI Z535.4
-                                       </label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5d" value="option4">
-                                       <label class="form-check-label" for="respuesta5d">
-                                        ANSI/SAE Z26.1
-                                       </label>
-                                   </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 2 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 2: ¿Qué debe incluir la inspección frecuente?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2a" value="option1">
+                                    <label class="form-check-label" for="respuesta2a">Observaciones solo cuando la grúa no está en funcionamiento</label>
                                 </div>
-    
-                                <div class="modal-footer">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2b" value="option2">
+                                    <label class="form-check-label" for="respuesta2b">Observaciones solo del operador</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2c" value="option3">
+                                    <label class="form-check-label" for="respuesta2c">Observaciones durante la operación y varios ítems</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2d" value="option4">
+                                    <label class="form-check-label" for="respuesta2d">Observaciones de daños severos</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 3 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 3: ¿Qué inspección debe incluir observaciones durante la operación?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3a" value="option1">
+                                    <label class="form-check-label" for="respuesta3a">Inspección periódica</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3b" value="option2">
+                                    <label class="form-check-label" for="respuesta3b">Inspección de grúas nuevas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3c" value="option3">
+                                    <label class="form-check-label" for="respuesta3c">Inspección frecuente</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3d" value="option4">
+                                    <label class="form-check-label" for="respuesta3d">Inspección de grúas que no operan en servicio regular</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 4 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 4: ¿Cuándo se debe realizar la inspección periódica en grúas en servicio normal?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4a" value="option1">
+                                    <label class="form-check-label" for="respuesta4a">Semanal</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4b" value="option2">
+                                    <label class="form-check-label" for="respuesta4b">Diaria</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4c" value="option3">
+                                    <label class="form-check-label" for="respuesta4c">Mensual</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4d" value="option4">
+                                    <label class="form-check-label" for="respuesta4d">Anual</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 5 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 5: ¿Cuál de los siguientes NO es un ítem que debe inspeccionarse durante la inspección periódica?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5a" value="option1">
+                                    <label class="form-check-label" for="respuesta5a">Ganchos y los seguros del gancho (si se usaran)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5b" value="option2">
+                                    <label class="form-check-label" for="respuesta5b">Cables de elevación y las conexiones de los extremos</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5c" value="option3">
+                                    <label class="form-check-label" for="respuesta5c">Frenos</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5d" value="option4">
+                                    <label class="form-check-label" for="respuesta5d">Indicadores de viento</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 6 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 6: ¿Qué inspección debe realizarse en grúas que no operan en servicio regular sin usarse por un mes o más, pero menos de un año?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6a" value="option1">
+                                    <label class="form-check-label" for="respuesta6a">Inspección frecuente</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6b" value="option2">
+                                    <label class="form-check-label" for="respuesta6b">Inspección periódica</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6c" value="option3">
+                                    <label class="form-check-label" for="respuesta6c">Inspección anual</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6d" value="option4">
+                                    <label class="form-check-label" for="respuesta6d">Inspección diaria</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 7 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 7: ¿Cuándo debe reemplazarse un cable de acero en una grúa, según los criterios de retiro?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7a" value="option1">
+                                    <label class="form-check-label" for="respuesta7a">
+                                        Al detectar cualquier cantidad de alambres rotos
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7b" value="option2">
+                                    <label class="form-check-label" for="respuesta7b">
+                                        Cuando al menos doce alambres estén rotos en un cable trenzado
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7c" value="option3">
+                                    <label class="form-check-label" for="respuesta7c">
+                                        Solo si el cable se dobla o aplasta
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7d" value="option4">
+                                    <label class="form-check-label" for="respuesta7d">
+                                        Cuando dos cables estén rotos en seis diámetros del cable
+                                    </label>
+                                </div>
+                            </div>   -->
+
+                            <!-- Modal Pregunta 8 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 8: ¿Qué debería considerarse antes de reconectar un cable roto en una conexión del extremo?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8a" value="option1">
+                                    <label class="form-check-label" for="respuesta8a">No se debe reconectar en ningún caso</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8b" value="option2">
+                                    <label class="form-check-label" for="respuesta8b">Debe ser reconectado inmediatamente</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8c" value="option3">
+                                    <label class="form-check-label" for="respuesta8c">La longitud del cable resultante para una operación adecuada</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8d" value="option4">
+                                    <label class="form-check-label" for="respuesta8d">La conexión del extremo debe ser reemplazada</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 9 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 9: ¿Cómo se debe almacenar el cable de acero para evitar daños o deterioro?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9a" value="option1">
+                                    <label class="form-check-label" for="respuesta9a">En un lugar expuesto al sol y la lluvia</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9b" value="option2">
+                                    <label class="form-check-label" for="respuesta9b">En un lugar oscuro y húmedo</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9c" value="option3">
+                                    <label class="form-check-label" for="respuesta9c">Desenrollado</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9d" value="option4">
+                                    <label class="form-check-label" for="respuesta9d">Enrollado sin preocuparse por su forma</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 10 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 10: ¿Qué criterios se deben cumplir para el reemplazo del cable y las conexiones?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10a" value="option1">
+                                    <label class="form-check-label" for="respuesta10a">La resistencia del cable y conexiones no importa</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10b" value="option2">
+                                    <label class="form-check-label" for="respuesta10b">La resistencia igual a la del cable original especificada por el fabricante del polipasto</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10c" value="option3">
+                                    <label class="form-check-label" for="respuesta10c">El cable puede ser más delgado de lo especificado</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10d" value="option4">
+                                    <label class="form-check-label" for="respuesta10d">No es necesario reemplazar las conexiones</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 11 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 11: ¿Cuál es el objetivo de lubricar el cable?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11a" value="option1">
+                                    <label class="form-check-label" for="respuesta11a">Reducir la capacidad de carga</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11b" value="option2">
+                                    <label class="form-check-label" for="respuesta11b">Aumentar la fricción interna</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11c" value="option3">
+                                    <label class="form-check-label" for="respuesta11c">Evitar la corrosión</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11d" value="option4">
+                                    <label class="form-check-label" for="respuesta11d">Facilitar la inspección visual</label>
+                                </div>
+                            </div> -->
+
+                            <!-- Modal Pregunta 12 -->
+                            <!-- <div class="modal-body">
+                                <p>Pregunta 12: ¿Qué se debe hacer antes de cortar un cable de acero?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12a" value="option1">
+                                    <label class="form-check-label" for="respuesta12a">Nada, se puede cortar de inmediato</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12b" value="option2">
+                                    <label class="form-check-label" for="respuesta12b">Contar con los medios necesarios para evitar el destrenzado de los torones</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12c" value="option3">
+                                    <label class="form-check-label" for="respuesta12c">Usarlo en una operación de elevación</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12d" value="option4">
+                                    <label class="form-check-label" for="respuesta12d">Enrollarlo sin preocuparse por su forma</label>
+                                </div>
+                            </div> -->
+                                <!-- <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                     <button type="button" class="btn btn-primary">Enviar respuestas</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div> -->
+                            <!-- </div>
+                        </div> -->
+                    <!-- </div> --> -->
 
                     <!-- Module 5 -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header" role="tab" id="module5Heading">
                             <h5 class="mb-0">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module5Collapse" aria-expanded="faaria-controls="module5Collapse">Módulo 5: Operación</a>
@@ -674,18 +923,17 @@
                         </div>
                         <div id="module5Collapse" class="collapse" role="tabpanel" aria-labelledby="module5Heading">
                             <div class="card-body">
-                                <iframe src="/data/Capítulo 2-3 Operación.pdf" width="100%" height="600px"></iframe>
+                                <iframe src="/data/asme_b30_2_2005/Capítulo 2-3 Operación.pdf" width="100%" height="600px"></iframe>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal5">
                                     Realizar Test
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
+                    <!-- PREGUNTAS DEL MODULO 5 -->
 
-                                        <!-- PREGUNTAS DEL MODULO 5 -->
-
-                                        <div class="modal fade" id="testModal5" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
+                    <!-- <div class="modal fade" id="testModal5" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -694,156 +942,269 @@
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                         <p>Pregunta 1: ¿Dónde debe ser marcada la carga nominal en una grúa?</p>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1a" value="option1">
-                                                            <label class="form-check-label" for="respuesta1a">
-                                                                En el bloque de carga
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1b" value="option2">
-                                                            <label class="form-check-label" for="respuesta1b">
-                                                                En la cabina
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1c" value="option3">
-                                                            <label class="form-check-label" for="respuesta1c">
-                                                                En la estructura de soporte
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1d" value="option4">
-                                                            <label class="form-check-label" for="respuesta1d">
-                                                                En la plataforma exterior
-                                                            </label>
-                                                        </div>   
-                                                    </div>
-                        
-                                                    <div class="modal-body">
-                                                        <p>Pregunta 2: ¿Cuáles son las advertencias que deben incluir las etiquetas de seguridad en grúas operadas a control remoto?</p>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2a" value="option1">
-                                                           <label class="form-check-label" for="respuesta2a">
-                                                            Levantar cargas mayores de la carga nominal
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2b" value="option2">
-                                                           <label class="form-check-label" for="respuesta2b">
-                                                            Operar la grúa con el viento
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2c" value="option3">
-                                                           <label class="form-check-label" for="respuesta2c">
-                                                            Operar la grúa con el cable en buen estado
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2d" value="option4">
-                                                           <label class="form-check-label" for="respuesta2d">
-                                                            Operar movimientos manuales sin otra energía
-                                                           </label>
-                                                       </div>
-                                                    </div>
-                        
-                                                    <div class="modal-body">
-                                                        <p>Pregunta 3: ¿Dónde deben estar ubicados los dispositivos de control usados por el operador para indicar cuál polipasto opera?</p>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3a" value="option1">
-                                                           <label class="form-check-label" for="respuesta3a">
-                                                            En la cabina
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3b" value="option2">
-                                                           <label class="form-check-label" for="respuesta3b">
-                                                            En la estructura de soporte
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3c" value="option3">
-                                                           <label class="form-check-label" for="respuesta3c">
-                                                            En el bloque de carga
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3d" value="option4">
-                                                           <label class="form-check-label" for="respuesta3d">
-                                                            En la plataforma de servicio
-                                                           </label>
-                                                       </div>
-                                                    </div>
-                        
-                                                    <div class="modal-body">
-                                                        <p>Pregunta 4: ¿Cuál es la altura mínima del espacio libre de la cabina sobre el pasillo o piso de trabajo?</p>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4a" value="option1">
-                                                           <label class="form-check-label" for="respuesta4a">
-                                                            5 pies (1.52 metros)
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4b" value="option2">
-                                                           <label class="form-check-label" for="respuesta4b">
-                                                            7 pies (2.1 metros)
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4c" value="option3">
-                                                           <label class="form-check-label" for="respuesta4c">
-                                                            10 pies (3.05 metros)
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4d" value="option4">
-                                                           <label class="form-check-label" for="respuesta4d">
-                                                            12 pies (3.66 metros)
-                                                           </label>
-                                                       </div>
-                                                    </div>
-                        
-                                                    <div class="modal-body">
-                                                        <p>Pregunta 5: ¿Qué norma debe cumplirse en cuanto a las barandas de seguridad en las plataformas de servicio?</p>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5a" value="option1">
-                                                           <label class="form-check-label" for="respuesta5a">
-                                                            ANSI A14.3
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5b" value="option2">
-                                                           <label class="form-check-label" for="respuesta5b">
-                                                            ANSI A1264.1
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5c" value="option3">
-                                                           <label class="form-check-label" for="respuesta5c">
-                                                            ANSI Z535.4
-                                                           </label>
-                                                       </div>
-                                                       <div class="form-check">
-                                                           <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5d" value="option4">
-                                                           <label class="form-check-label" for="respuesta5d">
-                                                            ANSI/SAE Z26.1
-                                                           </label>
-                                                       </div>
-                                                    </div>
-                        
-                                                    <div class="modal-footer">
+
+                                                    <!-- Modal Pregunta 1 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 1: ¿Quiénes pueden operar grúas según el párrafo 2-3.1.1(a)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1a" value="option1">
+                                        <label class="form-check-label" for="respuesta1a">Solo personas designadas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1b" value="option2">
+                                        <label class="form-check-label" for="respuesta1b">Personas designadas y cualquier personal en formación</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1c" value="option3">
+                                        <label class="form-check-label" for="respuesta1c">Cualquier personal de mantenimiento y pruebas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta1" id="respuesta1d" value="option4">
+                                        <label class="form-check-label" for="respuesta1d">Cualquier persona sin restricciones</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 2 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 2: ¿Quiénes pueden entrar a la cabina o plataforma de una grúa según el párrafo 2-3.1.1(b)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2a" value="option1">
+                                        <label class="form-check-label" for="respuesta2a">Cualquier persona</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2b" value="option2">
+                                        <label class="form-check-label" for="respuesta2b">Solo supervisores</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2c" value="option3">
+                                        <label class="form-check-label" for="respuesta2c">Personal de mantenimiento y pruebas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2d" value="option4">
+                                        <label class="form-check-label" for="respuesta2d">Solo si el operador lo permite</label>
+                                    </div>
+                                </div>
+
+                            
+                                <!-- Modal Pregunta 3 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 3: ¿Qué tipo de examen debe aprobar un operador de grúa según el párrafo 2-3.1.2(a)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3a" value="option1">
+                                        <label class="form-check-label" for="respuesta3a">Examen médico</label>
+                                    </div> 
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3b" value="option2">
+                                        <label class="form-check-label" for="respuesta3b">Examen práctico</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3c" value="option3">
+                                        <label class="form-check-label" for="respuesta3c">Examen escrito</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3d" value="option4">
+                                        <label class="form-check-label" for="respuesta3d">Ambos exámenes escrito y práctico</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 4 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 4: ¿Cuál es uno de los requisitos físicos que deben cumplir los operadores de grúas según el párrafo 2-3.1.2(b)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4a" value="option1">
+                                        <label class="form-check-label" for="respuesta4a">Tener una visión mínima de 20/10 en ambos ojos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4b" value="option2">
+                                        <label class="form-check-label" for="respuesta4b">No tener ninguna fuerza o resistencia física</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4c" value="option3">
+                                        <label class="form-check-label" for="respuesta4c">Ser capaz de distinguir colores sin importar la posición</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4d" value="option4">
+                                        <label class="form-check-label" for="respuesta4d">Tener una velocidad de reacción lenta</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 5 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 5: Según el párrafo 2-3.1.3, ¿quién puede operar grúas operadas desde el piso?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5a" value="option1">
+                                        <label class="form-check-label" for="respuesta5a">Solo personal de mantenimiento</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5b" value="option2">
+                                        <label class="form-check-label" for="respuesta5b">Solo inspectores</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5c" value="option3">
+                                        <label class="form-check-label" for="respuesta5c">Personas designadas y personal en formación</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5d" value="option4">
+                                        <label class="form-check-label" for="respuesta5d">Cualquier persona que tenga permiso</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 6 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 6: ¿Cuál es la limitación para las elevaciones planeadas según el párrafo 2-3.2.1.1(c)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6a" value="option1">
+                                        <label class="form-check-label" for="respuesta6a">Una elevación planeada por grúa al mes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6b" value="option2">
+                                        <label class="form-check-label" for="respuesta6b">Tres elevaciones planeadas por grúa al año</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6c" value="option3">
+                                        <label class="form-check-label" for="respuesta6c">Dos elevaciones planeadas por grúa en 12 meses consecutivos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6d" value="option4">
+                                        <label class="form-check-label" for="respuesta6d">No hay limitación para elevaciones planeadas</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 7 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 7: ¿Qué debe hacer el operador antes de abandonar la cabina de la grúa según el párrafo 2-3.1.7(f)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7a" value="option1">
+                                        <label class="form-check-label" for="respuesta7a">Dejar la carga suspendida</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7b" value="option2">
+                                        <label class="form-check-label" for="respuesta7b">Descargar la carga</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7c" value="option3">
+                                        <label class="form-check-label" for="respuesta7c">Dejar los dispositivos de control encendidos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7d" value="option4">
+                                        <label class="form-check-label" for="respuesta7d">Dejar los dispositivos de control apagados</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 8 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 8: ¿Qué requisitos deben cumplir las señales que recibe el operador según el párrafo 2-3.3.1?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8a" value="option1">
+                                        <label class="form-check-label" for="respuesta8a">Deben ser audibles</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8b" value="option2">
+                                        <label class="form-check-label" for="respuesta8b">Deben ser comprensibles solo por el operador</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8c" value="option3">
+                                        <label class="form-check-label" for="respuesta8c">Deben ser en código morse</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8d" value="option4">
+                                        <label class="form-check-label" for="respuesta8d">Deben estar de acuerdo con las señales de tráfico</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 9 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 9: ¿Cuál de las siguientes afirmaciones es cierta según el párrafo 2-3.2.3(c)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9a" value="option1">
+                                        <label class="form-check-label" for="respuesta9a">Las grúas no deben ser utilizadas en tracciones laterales bajo ninguna circunstancia.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9b" value="option2">
+                                        <label class="form-check-label" for="respuesta9b">Las tracciones laterales solo se pueden realizar con una grúa calificada.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9c" value="option3">
+                                        <label class="form-check-label" for="respuesta9c">Las tracciones laterales solo están permitidas si el cable de elevación no gira.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9d" value="option4">
+                                        <label class="form-check-label" for="respuesta9d">Las tracciones laterales pueden causar que el cable de elevación se salga de las poleas o atraviese las ranuras del tambor.</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 10 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 10: Según el párrafo 2-3.4.1(a), ¿qué deben hacer los operadores mientras usan escaleras portátiles?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10a" value="option1">
+                                        <label class="form-check-label" for="respuesta10a">No pueden llevar ningún objeto en sus manos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10b" value="option2">
+                                        <label class="form-check-label" for="respuesta10b">Pueden llevar objetos pequeños en sus bolsillos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10c" value="option3">
+                                        <label class="form-check-label" for="respuesta10c">Deben llevar todos los objetos en las manos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta10" id="respuesta10d" value="option4">
+                                        <label class="form-check-label" for="respuesta10d">No hay restricciones sobre lo que pueden llevar en las manos</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 11 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 11: ¿Dónde deben almacenarse las herramientas, latas de aceite y otros artículos necesarios en la cabina según el párrafo 2-3.4.2(b)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11a" value="option1">
+                                        <label class="form-check-label" for="respuesta11a">En cualquier lugar dentro de la cabina</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11b" value="option2">
+                                        <label class="form-check-label" for="respuesta11b">En un contenedor resistente al fuego</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11c" value="option3">
+                                        <label class="form-check-label" for="respuesta11c">Fuera de la cabina</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta11" id="respuesta11d" value="option4">
+                                        <label class="form-check-label" for="respuesta11d">En los bolsillos del operador</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- Modal Pregunta 12 -->
+                                <!-- <div class="modal-body">
+                                    <p>Pregunta 12: ¿Cuál es el propósito de las políticas y procedimientos de bloqueo/etiquetado según el párrafo 2-3.5(a)?</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12a" value="option1">
+                                        <label class="form-check-label" for="respuesta12a">Asegurar que solo el operador tenga acceso a la grúa</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12b" value="option2">
+                                        <label class="form-check-label" for="respuesta12b">Evitar que las grúas se bloqueen o etiqueten</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12c" value="option3">
+                                        <label class="form-check-label" for="respuesta12c">Garantizar la seguridad en la operación de las grúas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="pregunta12" id="respuesta12d" value="option4">
+                                        <label class="form-check-label" for="respuesta12d">Facilitar el mantenimiento sin ningún control de seguridad</label>
+                                    </div>
+                                </div>                               --> -->
+                                                    <!-- <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                                         <button type="button" class="btn btn-primary">Enviar respuestas</button>
-                                                    </div>
-                                                </div>
+                                                    </div> -->
+                                                <!-- </div>
                                             </div>
-                                        </div>
+                        </div> --> -->
 
-                </div>
-            </div>
+                <!-- </div>
+            </div> -->
 
         </div>
     </div>
@@ -1032,6 +1393,8 @@
     <script src="/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="/js/active.js"></script>
+    <!-- Script validacion de respuestas -->
+    <script src="/js/validacionRespuestas.js"></script>
 </body>
 
 </html>
