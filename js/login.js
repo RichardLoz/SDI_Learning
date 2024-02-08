@@ -4,7 +4,7 @@ const validarFormulario = () => {
     let passInput = document.getElementById('contraseña');
 
     //TODO: Validacion
-    if (dniInput && contraseñaInput) {
+    if (dniInput && passInput) {
         let dni = dniInput.value
         let pass = passInput.value
 
