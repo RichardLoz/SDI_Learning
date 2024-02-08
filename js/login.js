@@ -35,7 +35,7 @@ function loginAdmin(dni, pass) {
         url: "https://sdilearning-api.solucionesdeizajes.com.ar/users/login",
         type: "POST",
         headers: {
-            "X-API_key": "aguantevokita123_",
+            "X-API-key": "aguantevokita123_",
             "Authorization": "Basic " + credentials
         },
         xhrFields: {
