@@ -1,23 +1,28 @@
-//Login
-function loginAdmin() {
-    const credentials = btoa(user1.name + ':' + user1.password)
+// //Login
+// function loginAdmin() {
+//     const credentials = btoa("1" + ':' + "123456")
 
-    //Solicitud Login
-    $.ajax({
-        url: "https://sdilearning-api.solucionesdeizajes.com.ar/users/login",
-        type: "POST",
-        headers: {
-            "X-API_key": "aguantevokita123_",
-        },
-        success: function(response) {
-            // Una vez que la autenticación es exitosa, puedes proceder a enviar los datos
-            sendData(response.token); // Suponiendo que el token está en la respuesta
-        },
-        error: function(error) {
-            console.error("Error en la solicitud de login:", error);
-        }
-    })
-}
+//     //Solicitud Login
+//     $.ajax({
+//         url: "https://sdilearning-api.solucionesdeizajes.com.ar/users/login",
+//         type: "POST",
+//         headers: {
+//             "X-API_key": "aguantevokita123_",
+//             "Authorization": "Basic " + credentials
+//         },
+//         xhrFields: {
+//             withCredentials: true
+//         },
+
+//         success: function(response) {
+//             // Una vez que la autenticación es exitosa, puedes proceder a enviar los datos
+//             sendData(response.token); // Suponiendo que el token está en la respuesta
+//         },
+//         error: function(error) {
+//             console.error("Error en la solicitud de login:", error);
+//         }
+//     })
+// }
 
 
 $(document).ready(function() {
