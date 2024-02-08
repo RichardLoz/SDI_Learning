@@ -44,7 +44,7 @@ function loginAdmin(dni, pass) {
 
         success: function(response) {
             // Una vez que la autenticación es exitosa, puedes proceder a enviar los datos
-            sendData(response.token); // Suponiendo que el token está en la respuesta
+           window.location.href = "inicio.html"
         },
         error: function(error) {
             console.error("Error en la solicitud de login:", error);
