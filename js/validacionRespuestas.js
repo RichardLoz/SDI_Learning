@@ -49,7 +49,7 @@ $(document).ready(function() {
             "Content-Type": "application/json" // Establecer el tipo de contenido como JSON
            // "Authorization": "Basic " + credentials
             },
-          data: JSON.stringify({ respuestas: respuestasSeleccionadas }), // Convierto a JSON y enviar el array de respuestas al SRV
+          data: JSON.stringify(respuestasSeleccionadas), // Convierto a JSON y enviar el array de respuestas al SRV
           success: function(response) {
               // Manejar la respuesta del servidor
               console.log("Respuesta del servidor:", response);
