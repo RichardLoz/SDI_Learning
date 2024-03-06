@@ -44,7 +44,12 @@ $(document).ready(function() {
       $.ajax({
           url: "https://sdilearning-api.solucionesdeizajes.com.ar/answer/check",
           type: "POST",
-          data: { respuestas: respuestasSeleccionadas }, // Envía el array de respuestas al servidor
+          headers: {
+            "X-API-key": "aguanteVokita123_",
+            "Content-Type": "application/json" // Establecer el tipo de contenido como JSON
+           // "Authorization": "Basic " + credentials
+            },
+          data: JSON.stringify({ respuestas: respuestasSeleccionadas }), // Convierto a JSON y enviar el array de respuestas al SRV
           success: function(response) {
               // Manejar la respuesta del servidor
               console.log("Respuesta del servidor:", response);
@@ -55,7 +60,6 @@ $(document).ready(function() {
       });
   });
 });
-
 
 
 
