@@ -56,6 +56,20 @@ img {
   height: auto;
   max-width: 100%; }
 
+  /* ICONO DE APROBACION */
+  #approvalIcon {
+    font-size: 1.2em;
+    color: green; /* Color verde para indicar aprobación */
+}
+
+/* BOTON DE CERTIFICADO */
+#descargarCertificadoBtn{
+  position: absolute;
+  left: 16%;
+  bottom: -220px;
+}
+
+
 /* Spacing */
 .mt-15 {
   margin-top: 15px !important; }

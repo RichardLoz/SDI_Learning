@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SDI Learning - Cursos</title>
 
+    <!-- JSPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/9549c25a9f.js"crossorigin="anonymous"></script>
 
@@ -116,7 +120,7 @@
             <div class="col-12">
                 <div id="courseModules" class="accordion" role="tablist" aria-multiselectable="true">
                     <!-- Module 1 -->
-                    <div class="card">
+                    <div class="card" id="module1">
                         <div class="card-header" role="tab" id="module1Heading">
                             <h5 class="mb-0">
                                 <a data-toggle="collapse" data-parent="#courseModules" href="#module1Collapse" aria-expanded="true" aria-controls="module1Collapse">Módulo 1: Alcance - Definiciones y Referencias</a>
@@ -136,18 +140,21 @@
 
 
                     <!-- Module 2 -->
-                    <div class="card">
+                    <div class="card" id="module2">
                         <div class="card-header" role="tab" id="module2Heading">
                             <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module2Collapse" aria-expanded="false" aria-controls="module2Collapse">Módulo 2:  Construcción e Instalación  (PRIMERA PARTE)</a>
+                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module2Collapse" aria-expanded="false" aria-controls="module2Collapse">Módulo 2:  Construcción e Instalación  (PRIMERA PARTE)
+                                    <span id="module2ApprovalIcon" class="ml-2" style="display: none;">✔️</span> <!-- Icono de aprobación oculto -->
+                                </a>
                             </h5>
                         </div>
                         <div id="module2Collapse" class="collapse" role="tabpanel" aria-labelledby="module2Heading">
                             <div class="card-body">
                                 <iframe src="/data/asme_b30_2_2005/Capítulo 2-1  Construcción e Instalación  (PRIMERA PARTE)_.pdf" width="100%" height="600px"></iframe>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal2">
+                                <button type="button" class="btn btn-primary test-btn" data-toggle="modal" data-target="#testModal2">
                                     Realizar Test
                                 </button>
+                                
                             </div>
                         </div>
                     </div>
@@ -509,18 +516,21 @@
                 </div>
 
                     <!-- Module 3 -->
-                    <div class="card">
+                    <div class="card" id="module3">
                         <div class="card-header" role="tab" id="module3Heading">
                             <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module3Collapse" aria-expanded="faaria-controls="module3Collapse">Módulo 3: Construcción e Instalación  (SEGUNDA PARTE)</a>
+                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module3Collapse" aria-expanded="faaria-controls="module3Collapse">Módulo 3: Construcción e Instalación  (SEGUNDA PARTE)
+                                    <span id="module3ApprovalIcon" class="ml-2" style="display: none;">✔️</span> <!-- Icono de aprobación oculto -->
+                                </a>
                             </h5>
                         </div>
                         <div id="module3Collapse" class="collapse" role="tabpanel" aria-labelledby="module2Heading">
                             <div class="card-body">
                                 <iframe src="/data/asme_b30_2_2005/Capítulo 2-1  Construcción e Instalación  (SEGUNDA PARTE)_.pdf" width="100%" height="600px"></iframe>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal3">
+                                <button type="button" class="btn btn-primary test-btn" data-toggle="modal" data-target="#testModal3">
                                     Realizar Test
                                 </button>
+                                
                             </div>
                         </div>
                     </div>
@@ -536,7 +546,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                      <p>Pregunta 1: ¿Qué debe hacerse con los barridos de rieles del carro de traslación del puente?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta1" id="5a13d4cb-7430-4e66-b4e2-b04ad9a28764" value="option1">
@@ -558,7 +568,7 @@
                                     </div> 
                                 </div>
     
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 2: ¿Cuál es el propósito principal de los barridos de rieles?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta2" id="d5780020-99d6-4981-8c57-5a14ceb97546" value="option1">
@@ -580,7 +590,7 @@
                                    </div>
                                 </div>
     
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 3: ¿Cuál es el espacio libre máximo permitido entre la superficie de la cabeza del riel y la parte inferior del barrido?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta3" id="421cf9ab-2130-4988-b7dc-48fef7edab9c" value="option1">
@@ -602,7 +612,7 @@
                                    </div>
                                 </div>
     
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 4: ¿En qué tipo de grúas deben extenderse los barridos por debajo de la superficie de la cabeza del riel?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta4" id="249f1ada-021e-4e54-bf82-d17210e3b54f" value="option1">
@@ -624,7 +634,7 @@
                                    </div>
                                 </div>
     
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 5: ¿Cuál es el requisito para el espacio libre entre las superficies verticales interiores del barrido?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta5" id="2d87d271-e713-4986-a516-c1adefccff54" value="option1">
@@ -646,7 +656,7 @@
                                    </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 6: ¿Dónde deben ubicarse los barridos de rieles en el carro de traslación?</p>
                                    <div class="form-check">
                                        <input class="form-check-input" type="radio" name="pregunta6" id="63088a0a-1c1b-4be1-aa2d-ba6c4f9ea285" value="option1">
@@ -668,7 +678,7 @@
                                    </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 7: ¿Cuál es el propósito principal de los dispositivos de protección para partes en movimiento?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta7" id="22c16991-deba-478a-89e5-3f19afeed1f4" value="option1">
@@ -690,7 +700,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 8: ¿Cuál es el requisito para la capacidad de carga de los protectores de partes en movimiento?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta8" id="3f2502fc-3df2-414e-b70e-02c3ad4f11dd" value="option1">
@@ -712,7 +722,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 9: ¿Cuál es la distancia máxima permitida para la caída de armazones de carros y puentes en caso de fallo?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta9" id="856fce58-bd82-4992-9902-ffe222f5cb8d" value="option1">
@@ -734,7 +744,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 10: ¿Cuál es el requisito mínimo para la torsión del freno de contención en polipastos?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta10" id="c76660fd-950f-4b6a-8e32-09683ba582c0" value="option1">
@@ -756,7 +766,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 11: ¿Cuál es el propósito de los dispositivos de frenado de control del polipasto?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta11" id="a176ef3b-5b61-4203-8c69-3c487ae2a295" value="option1">
@@ -778,7 +788,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-body">
+                                <div class="modal-body" >
                                     <p>Pregunta 12: ¿En qué dirección debe dirigirse la palanca de operación del interruptor maestro o dispositivo de control manual?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="pregunta12" id="7d4f372b-31bf-45d2-bcaa-abe9c8c8e90f" value="option1">
@@ -801,25 +811,28 @@
                                 </div> 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Enviar respuestas</button>
+                                    <button type="button" class="btn btn-primary" id="enviarRespuestasBtn" disabled>Enviar respuestas</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Module 4 -->
-                    <div class="card">
+                    <div class="card" id="module4">
                         <div class="card-header" role="tab" id="module4Heading">
                             <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module4Collapse" aria-expanded="false" aria-controls="module4Collapse">Módulo 4: Inspección, Pruebas y Mantenimiento</a>
+                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module4Collapse" aria-expanded="false" aria-controls="module4Collapse">Módulo 4: Inspección, Pruebas y mantenimiento
+                                <span id="module4ApprovalIcon" class="ml-2" style="display: none;">✔️</span> <!-- Icono de aprobación oculto -->
+                                </a>
                             </h5>
                         </div>
                         <div id="module4Collapse" class="collapse" role="tabpanel" aria-labelledby="module4Heading">
                             <div class="card-body">
                                 <iframe src="/data/asme_b30_2_2005/Capítulo 2-2  Inspección, Pruebas y Mantenimiento.pdf" width="100%" height="600px"></iframe>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal4">
+                                <button type="button" class="btn btn-primary test-btn" data-toggle="modal" data-target="#testModal4">
                                     Realizar Test
                                 </button>
+                                
                             </div>
                         </div>
                     </div>
@@ -1085,25 +1098,28 @@
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Enviar respuestas</button>
+                                    <button type="button" class="btn btn-primary" id="enviarRespuestasBtn" disabled>Enviar respuestas</button>
                                 </div>
                             </div>
                         </div>
                     </div> 
 
                     <!-- Module 5 -->
-                    <div class="card">
+                    <div class="card" id="module5">
                         <div class="card-header" role="tab" id="module5Heading">
                             <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module5Collapse" aria-expanded="false" aria-controls="module5Collapse">Módulo 5: Operación</a>
+                                <a class="collapsed" data-toggle="collapse" data-parent="#courseModules" href="#module5Collapse" aria-expanded="false" aria-controls="module5Collapse">Módulo 5: Operación
+                                    <span id="module5ApprovalIcon" class="ml-2" style="display: none;">✔️</span> <!-- Icono de aprobación oculto -->
+                                </a>
                             </h5>
                         </div>
                         <div id="module5Collapse" class="collapse" role="tabpanel" aria-labelledby="module5Heading">
                             <div class="card-body">
                                 <iframe src="/data/asme_b30_2_2005/Capítulo 2-3 Operación.pdf" width="100%" height="600px"></iframe>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal5">
+                                <button type="button" class="btn btn-primary test-btn" data-toggle="modal" data-target="#testModal5">
                                     Realizar Test
                                 </button>
+                                
                             </div>
                         </div>
                     </div>
@@ -1361,7 +1377,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Enviar respuestas</button>
+                                    <button type="button" class="btn btn-primary" id="enviarRespuestasBtn" disabled>Enviar respuestas</button>
                                 </div>
                             </div>
                         </div>
@@ -1370,6 +1386,7 @@
             </div>
 
         </div>
+        <button id="descargarCertificadoBtn" class="btn btn-primary">Descargar Certificado</button>
     </div>
 </div>
 
@@ -1555,6 +1572,7 @@
     <script src="/js/active.js"></script>
     <!-- Script validacion de respuestas -->
     <script src="/js/validacionRespuestas.js"></script>
+    
 </body>
 
 </html>
