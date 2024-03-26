@@ -63,11 +63,11 @@ img {
 }
 
 /* BOTON DE CERTIFICADO */
-#descargarCertificadoBtn{
-  position: absolute;
-  left: 16%;
-  bottom: -220px;
-}
+  /* #descargarCertificadoBtn{
+    position: absolute;
+    left: 16%;
+    bottom: -220px;
+  } */
 
 
 /* Spacing */
