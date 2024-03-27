@@ -90,54 +90,9 @@ function validarRespuestas5() {
 $('input[type="radio"]').on('change', validarRespuestas5);
 
 
-// // Llamada enviando el objeto respuestas
-// $(document).ready(function() {
-//   // Agrega un evento de clic al botón "Enviar respuestas"
-//   $("#enviarRespuestasBtn").on("click", function() {
-//       // Array para almacenar los id de las respuestas seleccionadas
-//       let respuestasSeleccionadas = [];
-
-//       // Recorre todos los elementos input de tipo radio
-//       $('input[type=radio]:checked').each(function() {
-//           // Obtiene el id y lo agrega al array
-//           respuestasSeleccionadas.push($(this).attr('id'));
-//       });
-
-//       // Muestra los id de las respuestas seleccionadas en la consola (puedes ajustar esto según tus necesidades)
-//       console.log("respuestas:", respuestasSeleccionadas);
-
-//       // Realiza la llamada AJAX para validar las respuestas
-//       $.ajax({
-//           url: "https://sdilearning-api.solucionesdeizajes.com.ar/answer/check",
-//           type: "POST",
-//           headers: {
-//             "X-API-key": "aguanteVokita123_",
-//             "Content-Type": "application/json" // Establecer el tipo de contenido como JSON
-//            // "Authorization": "Basic " + credentials
-//             },
-//           data: JSON.stringify(respuestasSeleccionadas), // Convierto a JSON y enviar el array de respuestas al SRV
-//           success: function(response) {
-//               // Manejar la respuesta del servidor
-//               console.log("Respuesta del servidor:", response);
-//               if (response.Respuesta.aprobo) {
-//                 console.log("El usuario aprobo")
-//                 // Si el usuario aprobó, muestra un alert
-//                 alert("¡Has aprobado el test!");
-//                 $('#testModal2').modal('hide'); // Cerrar ventana modal
-//                 $('[id$="ApprovalIcon"]').show(); // mostrar icono de Aprobacion
-//             } else {
-//                 // Si el usuario no aprobó, cambia el orden de las preguntas en el modal
-//                 cambiarOrdenPreguntas();
-//                 $('input[type=radio]:checked').prop('checked', false); // Limpiar las respuestas seleccionadas
-//             }
-//           },
-//           error: function(error) {
-//               console.error("Error en la llamada AJAX:", error);
-//           }
-//       });
-//   });
-
 $(document).ready(function() {
+    var todosModulosAprobados = false;
+
     // Agrega un evento de clic al botón "Enviar respuestas" del Módulo 2
     $("#enviarRespuestasBtn").on("click", function() {
         // Llama a la función para enviar las respuestas del Módulo 2
@@ -188,8 +143,9 @@ $(document).ready(function() {
                     console.log("El usuario aprobó");
                     alert("¡Has aprobado el test!");
                     $(`#testModal${numeroModulo}`).modal('hide');
-                    // $(`[id$="ApprovalIcon${numeroModulo}"]`).show();
-                    $('[id$="ApprovalIcon"]').show(); // mostrar icono de Aprobacion
+                    $(`#module${numeroModulo}ApprovalIcon`).show();
+                    // $('[id$="ApprovalIcon"]').show(); // mostrar icono de Aprobacion
+                    verificarTodosModulosAprobados();
                 } else {
                     cambiarOrdenPreguntas(numeroModulo);
                     $('input[type=radio]:checked').prop('checked', false); // Limpiar las respuestas seleccionadas
@@ -212,7 +168,28 @@ $(document).ready(function() {
     });
     }
 
+    // Función para verificar si todos los módulos están aprobados
+    function verificarTodosModulosAprobados() {
+        todosModulosAprobados = true;
+        $('[id^="module"][id$="ApprovalIcon"]').each(function() {
+            // Si encuentra algún icono de aprobación oculto, entonces no todos los módulos están aprobados
+            if ($(this).css('display') === 'none') {
+                todosModulosAprobados = false;
+                return false; // Salir del bucle
+            }
+        });
+
+        // Habilitar o deshabilitar el botón "Descargar Certificado" según el estado de aprobación de todos los módulos
+        $('#descargarCertificadoBtn').prop('disabled', !todosModulosAprobados);
+    }
+
+    // Llamar a la función para verificar el estado de aprobación de todos los módulos al cargar la página
+    verificarTodosModulosAprobados();
+
 });
+
+
+
 
 $(document).ready(function () {
     // Función para generar el certificado PDF
@@ -229,20 +206,39 @@ $(document).ready(function () {
         doc.addImage(logo, 'PNG', 15, 15, 40, 30); // Ajusta las coordenadas y el tamaño del logo según sea necesario
 
         // Agregar el título principal
-        doc.setFontSize(18);
-        doc.text('Certificado de Finalización', 70, 30); // Ajusta las coordenadas del título principal según sea necesario
+        doc.setFontSize(24);
+        doc.text('Certificado de Finalización', 70, 30, {align: 'center'}); // Ajusta las coordenadas del título principal según sea necesario
 
         // Agregar un mensaje de felicitaciones
         doc.setFontSize(12);
-        doc.text('¡Felicidades por completar el curso!', 70, 45); // Ajusta las coordenadas del mensaje de felicitaciones según sea necesario
+        doc.text('¡Felicidades por completar el curso!', 70, 45, { align: 'center'}); // Ajusta las coordenadas del mensaje de felicitaciones según sea necesario
 
         // Agregar el nombre del curso
         doc.setFontSize(14);
-        doc.text('Curso: ASME B30.2_2005', 70, 60); // Ajusta las coordenadas del nombre del curso según sea necesario
+        doc.text('Curso: ASME B30.2_2005', 70, 60, { align: 'center'}); // Ajusta las coordenadas del nombre del curso según sea necesario
+
+        // Agregar una lista de los módulos del curso
+        var modulesList = ['Módulo 1: Definiciones y Referencias', 
+                            'Módulo 2: Construcción e Instalación (PRIMERA PARTE)', 
+                            'Módulo 3: Construcción e Instalación (SEGUNDA PARTE)',
+                            'Módulo 4: Inspección, Pruebas y mantenimiento', 
+                            'Módulo 5: Operación', ];
+        var startY = 70;
+        modulesList.forEach(function(module, index) {
+            doc.text(module, 20, startY + (index * 10));
+        });
+
+          // Agregar la firma digital del profesional
+        doc.setFontSize(12);
+        doc.text('Firma Digital del Profesional', 20, startY + (modulesList.length * 10) + 20);
+
+        // Agregar el footer con el nombre de la empresa que certifica
+        doc.setFontSize(10);
+        doc.text('Certificado emitido por: SDI - Soluciones de Izajes', 105, 290, { align: 'center' });
 
         // Descargar el documento como un archivo PDF
-        doc.save('certificado.pdf');
-    }
+        doc.save('certificado_aprobacion.pdf');
+        }
 
     // Agregar un controlador de eventos al botón de descarga del certificado
     $('#descargarCertificadoBtn').on('click', function () {
