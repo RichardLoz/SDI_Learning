@@ -44,7 +44,9 @@ function loginAdmin(dni, pass) {
 
         success: function(response) {
             // Una vez que la autenticación es exitosa, puedes proceder a enviar los datos
+            //console.log(response)  ==> Datos del usuario logueado
            window.location.href = "inicio.html"
+           
         },
         error: function(error) {
             console.error("Error en la solicitud de login:", error);

@@ -140,15 +140,31 @@ $(document).ready(function() {
             success: function(response) {
                 console.log("Respuesta del servidor:", response);
                 if (response.Respuesta.aprobo) {
-                    console.log("El usuario aprobó");
-                    alert("¡Has aprobado el test!");
-                    $(`#testModal${numeroModulo}`).modal('hide');
-                    $(`#module${numeroModulo}ApprovalIcon`).show();
-                    // $('[id$="ApprovalIcon"]').show(); // mostrar icono de Aprobacion
-                    verificarTodosModulosAprobados();
+                    Swal.fire({
+                        title: '¡Felicidades!',
+                        text: 'Has aprobado el test',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $(`#testModal${numeroModulo}`).modal('hide');
+                            $(`#module${numeroModulo}ApprovalIcon`).show();
+                            verificarTodosModulosAprobados();
+                          }
+                    })
                 } else {
-                    cambiarOrdenPreguntas(numeroModulo);
-                    $('input[type=radio]:checked').prop('checked', false); // Limpiar las respuestas seleccionadas
+                    Swal.fire({
+                        title: 'Lo sentimos',
+                        text: 'No has aprobado el test',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          cambiarOrdenPreguntas(numeroModulo);
+                          $('input[type=radio]:checked').prop('checked', false); // Limpiar las respuestas seleccionadas
+                          $(`#testModal${numeroModulo}`).modal('hide');
+                        }
+                      });
                 }
             },
             error: function(error) {
@@ -158,15 +174,29 @@ $(document).ready(function() {
     }
 
   // Función para cambiar el orden de las preguntas en el modal
-  function cambiarOrdenPreguntas() {
-    // Encuentra todos los elementos "modal-body"
-    let preguntas = $('.modal-body');
-    // Invierte el orden de los elementos
+function cambiarOrdenPreguntas(numeroModulo) {
+    // Encuentra todos los elementos "modal-body" del módulo correspondiente
+    let preguntas = $(`#testModal${numeroModulo} .modal-body`);
+    
+    // Recorre cada pregunta
     preguntas.each(function(index, pregunta) {
+        // Encuentra el elemento <p> dentro de la pregunta
+        let parrafo = $(pregunta).find('p');
+        
+        // Obtiene el texto actual del párrafo
+        let textoActual = parrafo.text();
+        
+        // Elimina cualquier número de pregunta existente
+        let textoSinNumero = textoActual.replace(/^Pregunta \d+: /, '');
+        
+        // Establece el nuevo texto con el número de pregunta
+        parrafo.text(`Pregunta ${index + 1}: ${textoSinNumero}`);
+        
+        // Cambia el orden de la pregunta en el DOM
         $(pregunta).prependTo(pregunta.parentNode);
-        $(pregunta).find('p').text(`Pregunta ${index + 1}: ${$(pregunta).find('p').text()}`);
     });
-    }
+}
+
 
     // Función para verificar si todos los módulos están aprobados
     function verificarTodosModulosAprobados() {
