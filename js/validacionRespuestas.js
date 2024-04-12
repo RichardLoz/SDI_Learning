@@ -144,7 +144,10 @@ $(document).ready(function() {
                         title: '¡Felicidades!',
                         text: 'Has aprobado el test',
                         icon: 'success',
-                        confirmButtonText: 'Aceptar'
+                        confirmButtonText: 'Aceptar',
+                        customClass: {
+                            popup: 'aceptar_m2'
+                        }
                     }).then((result) => {
                         if (result.isConfirmed) {
                             $(`#testModal${numeroModulo}`).modal('hide');
