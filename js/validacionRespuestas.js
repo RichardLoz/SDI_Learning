@@ -213,7 +213,7 @@ function cambiarOrdenPreguntas(numeroModulo) {
         });
 
         // Habilitar o deshabilitar el botón "Descargar Certificado" según el estado de aprobación de todos los módulos
-        $('#descargarCertificadoBtn').prop('disabled', !todosModulosAprobados);
+        //$('#descargarCertificadoBtn').prop('disabled', !todosModulosAprobados);
     }
 
     // Llamar a la función para verificar el estado de aprobación de todos los módulos al cargar la página
@@ -230,13 +230,20 @@ $(document).ready(function () {
         // Crear un nuevo documento PDF
         var doc = new jsPDF();
 
-        // Agregar un borde alrededor de la página
+        //Borde color negro
+        doc.setDrawColor(0); // Color negro
+        doc.setLineWidth(2); // Grosor de línea más delgado para el borde interno
         doc.rect(5, 5, doc.internal.pageSize.width - 10, doc.internal.pageSize.height - 10, 'S');
+
+        // Agregar el borde interno alrededor de la página (color azul)
+        doc.setDrawColor(0, 0, 255); // Color azul (en formato RGB)
+        doc.setLineWidth(1.5); // Grosor de línea más delgado para el borde interno
+        doc.rect(10, 10, doc.internal.pageSize.width - 20, doc.internal.pageSize.height - 20, 'S');
 
         // Agregar un logo al certificado
         var logo = new Image();
         logo.src = '/img/core-img/logo.png'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
-        doc.addImage(logo, 'PNG', 15, 15, 40, 30); // Ajusta las coordenadas y el tamaño del logo según sea necesario
+        doc.addImage(logo, 'PNG', 10, 10, 30, 20); // Ajusta las coordenadas y el tamaño del logo según sea necesario
 
         // Agregar el título principal
         doc.setFontSize(24);
