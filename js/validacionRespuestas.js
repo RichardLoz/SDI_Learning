@@ -242,20 +242,36 @@ $(document).ready(function () {
 
         // Agregar un logo al certificado
         var logo = new Image();
-        logo.src = '/img/core-img/logo.png'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
-        doc.addImage(logo, 'PNG', 10, 10, 30, 20); // Ajusta las coordenadas y el tamaño del logo según sea necesario
+        logo.src = '/img/core-img/logo-certi.png'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
+        doc.addImage(logo, 'PNG', 15, 15, 25, 19); // Ajusta las coordenadas y el tamaño del logo según sea necesario
 
         // Agregar el título principal
         doc.setFontSize(24);
-        doc.text('Certificado de Finalización', 70, 30, {align: 'center'}); // Ajusta las coordenadas del título principal según sea necesario
+        doc.text('Certificado de Participación', 60, 40, {align: 'center'}); // Ajusta las coordenadas del título principal según sea necesario
 
         // Agregar un mensaje de felicitaciones
         doc.setFontSize(12);
-        doc.text('¡Felicidades por completar el curso!', 70, 45, { align: 'center'}); // Ajusta las coordenadas del mensaje de felicitaciones según sea necesario
+        doc.text('¡Felicidades por completar el curso!', 70, 50, { align: 'center'}); // Ajusta las coordenadas del mensaje de felicitaciones según sea necesario
+
+        // Agregar un mensaje de para quien:
+        doc.setFontSize(12);
+        doc.text('Por cuanto: ', 25, 60, { align: 'center'}); // Ajusta las coordenadas del mensaje dfelicitaciones según sea necesario
+
+        // Nombre del alumno
+        doc.setFontSize(22);
+        doc.text('Ricardo Lozano', 70,75, {align: 'center'});
+
+        // Mensaje de participo:
+        doc.setFontSize(12);
+        doc.text('Participó en el curso sobre: ', 25,  90, {align: 'center'});
 
         // Agregar el nombre del curso
-        doc.setFontSize(14);
-        doc.text('Curso: ASME B30.2_2005', 70, 60, { align: 'center'}); // Ajusta las coordenadas del nombre del curso según sea necesario
+        doc.setFontSize(22);
+        doc.text('Curso: ASME B30.2_2005', 60, 105, { align: 'center'}); // Ajusta las coordenadas del nombre del curso según sea necesario
+
+        // Mensaje de contenido del curso:
+        doc.setFontSize(12);
+        doc.text('Temas incluidos: ', 25,  120, {align: 'center'});
 
         // Agregar una lista de los módulos del curso
         var modulesList = ['Módulo 1: Definiciones y Referencias', 
@@ -263,18 +279,29 @@ $(document).ready(function () {
                             'Módulo 3: Construcción e Instalación (SEGUNDA PARTE)',
                             'Módulo 4: Inspección, Pruebas y mantenimiento', 
                             'Módulo 5: Operación', ];
-        var startY = 70;
+        var startY = 130;
         modulesList.forEach(function(module, index) {
-            doc.text(module, 20, startY + (index * 10));
+            doc.text(module, 30, startY + (index * 10));
         });
+
+
+        // Mensaje de duracion del curso:
+        doc.setFontSize(10);
+        doc.text('Curso dictado con una duración de 4 horas ', 60,  185, {align: 'center'});
+
+        //Firma digital
+        var firma = new Image();
+        firma.src = '/img/core-img/firma_certi.jpeg'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
+        doc.addImage(firma, 'JPEG', 30, 200, 30, 25); // Ajusta las coordenadas y el tamaño del logo según sea necesario
+
 
           // Agregar la firma digital del profesional
         doc.setFontSize(12);
-        doc.text('Firma Digital del Profesional', 20, startY + (modulesList.length * 10) + 20);
+        doc.text('Responsable que certifica', 20, startY + (modulesList.length * 10) + 50);
 
         // Agregar el footer con el nombre de la empresa que certifica
         doc.setFontSize(10);
-        doc.text('Certificado emitido por: SDI - Soluciones de Izajes', 105, 290, { align: 'center' });
+        doc.text('Certificado emitido por: SDI - Soluciones de Izajes', 65, 280, { align: 'center' });
 
         // Descargar el documento como un archivo PDF
         doc.save('certificado_aprobacion.pdf');
