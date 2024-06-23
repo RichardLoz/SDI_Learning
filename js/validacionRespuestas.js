@@ -231,77 +231,74 @@ $(document).ready(function () {
         var doc = new jsPDF();
 
         //Borde color negro
-        doc.setDrawColor(0); // Color negro
+        doc.setDrawColor(128, 128, 128); // Color negro
         doc.setLineWidth(2); // Grosor de línea más delgado para el borde interno
         doc.rect(5, 5, doc.internal.pageSize.width - 10, doc.internal.pageSize.height - 10, 'S');
 
-        // Agregar el borde interno alrededor de la página (color azul)
-        doc.setDrawColor(0, 0, 255); // Color azul (en formato RGB)
-        doc.setLineWidth(1.5); // Grosor de línea más delgado para el borde interno
-        doc.rect(10, 10, doc.internal.pageSize.width - 20, doc.internal.pageSize.height - 20, 'S');
+        // Borde interno gris con transparencia
+        doc.setDrawColor(128, 128, 128); // Color gris
+        doc.setLineWidth(1); // Grosor de línea más delgado
+        doc.setFillColor(128, 128, 128, 0.5); // Color gris con 50% de transparencia
+        doc.rect(7, 7, doc.internal.pageSize.width - 14, doc.internal.pageSize.height - 15, 'S');
 
         // Agregar un logo al certificado
         var logo = new Image();
-        logo.src = '/img/core-img/logo-certi.png'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
-        doc.addImage(logo, 'PNG', 15, 15, 25, 19); // Ajusta las coordenadas y el tamaño del logo según sea necesario
+        logo.src = '/img/core-img/logo_pdf.jpeg'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
+        doc.addImage(logo, 'JPEG', 85, 10, 30, 45); // Ajusta las coordenadas y el tamaño del logo según sea necesario (Derecha,arriba,ancho,alto)
 
         // Agregar el título principal
-        doc.setFontSize(24);
-        doc.text('Certificado de Participación', 60, 40, {align: 'center'}); // Ajusta las coordenadas del título principal según sea necesario
+        doc.setFont("helvetica","normal")
+        doc.setFontSize(38);
+        doc.text('CERTIFICADO', 60, 75, {align: 'center'}); // Ajusta las coordenadas del título principal según sea necesario
 
-        // Agregar un mensaje de felicitaciones
         doc.setFontSize(12);
-        doc.text('¡Felicidades por completar el curso!', 70, 50, { align: 'center'}); // Ajusta las coordenadas del mensaje de felicitaciones según sea necesario
+        doc.text('Se otorga el presente', 80, 85, { align: 'center'}); // Ajusta las coordenadas del mensaje de felicitaciones según sea necesario
 
         // Agregar un mensaje de para quien:
-        doc.setFontSize(12);
-        doc.text('Por cuanto: ', 25, 60, { align: 'center'}); // Ajusta las coordenadas del mensaje dfelicitaciones según sea necesario
+        doc.setFontSize(14);
+        doc.text('CERTIFICADO DE APROBACION AL Sr.: ', 60, 92, { align: 'center'}); // Ajusta las coordenadas del mensaje dfelicitaciones según sea necesario
 
         // Nombre del alumno
-        doc.setFontSize(22);
-        doc.text('Ricardo Lozano', 70,75, {align: 'center'});
+        doc.setFontSize(12);
+        doc.text('D.N.I.:', 95,105, {align: 'center'});
 
         // Mensaje de participo:
         doc.setFontSize(12);
-        doc.text('Participó en el curso sobre: ', 25,  90, {align: 'center'});
+        doc.text('Por la participaciòn y Aprobaciòn del Curso: ', 60,  111, {align: 'center'});
 
         // Agregar el nombre del curso
-        doc.setFontSize(22);
-        doc.text('Curso: ASME B30.2_2005', 60, 105, { align: 'center'}); // Ajusta las coordenadas del nombre del curso según sea necesario
+        doc.setFontSize(12);
+        doc.text('Norma ASME B30.2.', 80, 116, { align: 'center'}); // Ajusta las coordenadas del nombre del curso según sea necesario
 
         // Mensaje de contenido del curso:
         doc.setFontSize(12);
-        doc.text('Temas incluidos: ', 25,  120, {align: 'center'});
+        doc.text('Temas incluidos: ', 85,  121, {align: 'center'});
 
-        // Agregar una lista de los módulos del curso
-        var modulesList = ['Módulo 1: Definiciones y Referencias', 
-                            'Módulo 2: Construcción e Instalación (PRIMERA PARTE)', 
-                            'Módulo 3: Construcción e Instalación (SEGUNDA PARTE)',
-                            'Módulo 4: Inspección, Pruebas y mantenimiento', 
-                            'Módulo 5: Operación', ];
-        var startY = 130;
-        modulesList.forEach(function(module, index) {
-            doc.text(module, 30, startY + (index * 10));
-        });
-
-
+        //Listas de modulos
+        doc.setFontSize(12);
+        doc.text('Módulo 1: Definiciones y Referencias.', 60,  126, {align: 'center'});
+        doc.text('Módulo 2: Construcción e Instalación (PRIMERA PARTE).', 50,  131, {align: 'center'});
+        doc.text('Módulo 3: Construcción e Instalación (SEGUNDA PARTE).', 50,  136, {align: 'center'});
+        doc.text('Módulo 4: Inspección, Pruebas y mantenimiento.', 55,  141, {align: 'center'});
+        doc.text('Módulo 5: Operación.', 75,  146, {align: 'center'});
+        
         // Mensaje de duracion del curso:
         doc.setFontSize(10);
-        doc.text('Curso dictado con una duración de 4 horas ', 60,  185, {align: 'center'});
+        doc.text('Curso dictado con una duración de 4 horas ', 70,  155, {align: 'center'});
 
         //Firma digital
         var firma = new Image();
-        firma.src = '/img/core-img/firma_certi.jpeg'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
-        doc.addImage(firma, 'JPEG', 30, 200, 30, 25); // Ajusta las coordenadas y el tamaño del logo según sea necesario
+        firma.src = '/img/core-img/firma_certi.png'; // Cambia 'ruta_del_logo.png' por la URL o la ruta de tu logo
+        doc.addImage(firma, 'PNG', 30, 170, 30, 25); // Ajusta las coordenadas y el tamaño del logo según sea necesario
 
 
           // Agregar la firma digital del profesional
         doc.setFontSize(12);
-        doc.text('Responsable que certifica', 20, startY + (modulesList.length * 10) + 50);
+        doc.text('Responsable que certifica', 30,  200, {align: 'center'});
 
         // Agregar el footer con el nombre de la empresa que certifica
         doc.setFontSize(10);
-        doc.text('Certificado emitido por: SDI - Soluciones de Izajes', 65, 280, { align: 'center' });
+        doc.text('Certificado emitido por: SDI - Soluciones de Izajes', 65, 220, { align: 'center' });
 
         // Descargar el documento como un archivo PDF
         doc.save('certificado_aprobacion.pdf');
